@@ -1,9 +1,25 @@
 import streamlit as st
 import pandas as pd
 
+st.set_page_config(page_title="Mi Biblioteca", page_icon="📚")
 st.set_page_config(page_title="Mi Biblioteca", layout="wide")
 
 st.title("📚 Mi Buscador de Libros")
+
+# --- Configuración del Glosario ---
+with st.sidebar:
+    st.title("📂 Guía de Estantes")
+    st.markdown("""
+    **Códigos de Ubicación:**
+    - **STV:** Estanterías en la Sala Tv.
+    - **G:** Tercer Piso/ Gimnasio.
+    - **CA:** Cuarto de Abajo.
+    - **CE:** Cuarto de Eva.
+    
+    *Ejemplo: STV-01 es el primer estante de la derecha en sala tv*
+    """)
+    st.divider()
+    st.info("💡 Consejo: Puedes buscar solo 'STV' para ver todos los libros de esa habitación.")
 
 # Cargar datos
 @st.cache_data
